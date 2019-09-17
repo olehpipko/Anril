@@ -331,3 +331,99 @@ a {
 		height: 100%;
 	}
 }
+
+.about {
+	min-height: 75vh;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;	
+	text-transform: uppercase;
+	font-size: 2.4rem;
+	color: $violet;
+	text-align: center;
+	line-height: 5.5rem;
+
+	&__row {
+		width: 114rem;
+		max-width: 100%;
+		margin: auto;
+	}
+
+	&__heading {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: -1;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 40rem;
+		color: $light;
+	}
+
+	p {
+		font-family: 'Montserrat';
+	}
+}
+
+.services {
+	min-height: 100vh;
+	padding: 6rem 0;
+	background-color: $light;
+
+	&__row {
+		@extend .about__row;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__left {
+		width: 39rem;
+		min-height: calc(100vh - 12rem);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $violet;
+	}
+
+	&__right {
+		width: 70.5rem;
+		margin-left: auto;
+	}
+
+	&__nav {
+		width: 90%;
+		padding: 0;
+		margin: 0 auto;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+
+		&-btn {
+			font-size: .1rem;
+			background-color: transparent;
+			color: $white;
+			border-width: 0;
+			cursor: pointer;
+
+			&-icon {
+				height: 5rem;
+			}
+		}
+	}
+
+	&__list {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	&__item {
+		text-align: center;
+		color: $dark;
+	}
+}
