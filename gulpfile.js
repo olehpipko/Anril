@@ -1,11 +1,11 @@
- const	gulp = require('gulp'),
+const	gulp = require('gulp'),
  		rename = require('gulp-rename'),
  		sass = require('gulp-sass'),
  		sourcemaps = require('gulp-sourcemaps'),
  		plumber = require('gulp-plumber'),
  		browserSync = require('browser-sync');
 
- function css_style(done) {
+function css_style(done) {
  	gulp.src('assets/scss/main.scss')
  	 .pipe(sourcemaps.init())
  	 .pipe(rename({

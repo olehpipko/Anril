@@ -314,6 +314,11 @@ a {
 		text-transform: uppercase;
 		background-color: $violet;
 		transition: all .1s;
+		color: $white;
+
+		&:hover {
+			background-color: $orange;
+		}
 	}
 
 	&__bg {
@@ -387,7 +392,26 @@ a {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		background-color: $violet;
+	}
+
+	&__icon {
+		width: 14rem;
+		height: 14rem;
+		margin-bottom: 5rem;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__heading {
+		font-size: 2.2rem;
+		font-weight: 400;
+		color: $white;
+		text-transform: uppercase;
 	}
 
 	&__right {
@@ -396,14 +420,16 @@ a {
 	}
 
 	&__nav {
-		width: 90%;
+		width: 80%;
 		padding: 0;
-		margin: 0 auto;
+		margin: 4rem auto 0;
 		list-style: none;
 		display: flex;
 		justify-content: space-between;
 
 		&-btn {
+			display: flex;
+			flex-direction: column;
 			font-size: .1rem;
 			background-color: transparent;
 			color: $white;
@@ -411,19 +437,220 @@ a {
 			cursor: pointer;
 
 			&-icon {
-				height: 5rem;
+				height: 3rem;
 			}
+		}
+
+		&-item--current &-btn-icon {
+			height: 5rem;
 		}
 	}
 
 	&__list {
 		padding: 0;
-		margin: 0;
+		margin: 4rem 0 0;
+		display: flex;
+		justify-content: center;
 		list-style-type: none;
 	}
 
 	&__item {
+		max-width: 56.5rem;
 		text-align: center;
 		color: $dark;
+		font-size: 1.7rem;
+		line-height: 2rem;
+
+		&:not(:first-child) {
+			display: none;
+		}
+	}
+
+	&__subheading {
+		margin-bottom: 3rem;
+		font-size: 2.2rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: $violet;
+	}
+
+	&__btn {
+		@extend .header__btn;
+		margin-top: 3rem;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.seo {
+	min-height: 100vh;
+	padding: 12rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__row {
+		@extend .about__row;
+	}
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 1.7rem;
+		line-height: 1.7rem;
+		color: $dark;
+
+		&--left {
+			width: 43%;
+			margin-bottom: 3rem;
+		}
+
+		&--right {
+			width: 57%;
+			margin-bottom: 3rem;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	&__heading {
+		margin: 2rem 0 3rem;
+		font-size: 2.2rem;
+		font-weight: 400;
+		color: $violet;
+		text-transform: uppercase;
+	}
+}
+
+.conditions {
+	padding: 3.5rem 0;
+
+	&__row {
+		@extend .about__row;
+	}
+
+	&__list {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		list-style-type: none;
+	}
+
+	&__item {
+		height: 30rem;
+		width: calc(25% - 1.5rem);
+		position: relative;
+		background-color: $light;
+		overflow: hidden;
+
+		&:hover &--back {
+			top: 0;
+		}
+
+		&--front,
+		&--back {
+			height: 100%;
+			width: 100%;
+			padding: 1.5rem;
+			text-align: center;
+			font-size: 1.6rem;
+		}
+
+		&--front {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&--back {
+			position: absolute;
+			left: 0;
+			top: 100%;
+			background-color: $violet + db;
+			color: $white;
+			transition: all .3s;
+		}
+	}
+
+	&__heading {
+		margin-top: 2rem;
+		font-size: 1.6rem;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+
+	&__icon {
+		height: 6.5rem;
+	}
+}
+
+.portfolio {
+	padding: 6rem 0;
+	background-color: $violet;
+	color: $white;
+	text-transform: uppercase;
+	text-align: center;
+	overflow: hidden;
+
+	&__heading {
+		margin: 0;
+		font-size: 1.8rem;
+		font-weight: 400;
+	}
+
+	&__list {
+		width: calc(100% + .5rem);
+		transform: translateX(-.25rem);
+		padding: 0;
+		margin: 3.5rem 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+	}
+
+	&__item {
+		width: calc(25% - .5rem);
+		height: 33rem;
+		padding: 1rem;
+		margin: .25rem;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__item:hover &__link {
+		top: 1rem;
+	}
+
+	&__preview {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		object-fit: cover;
+	}
+
+	&__link {
+		width: calc(100% - 2rem);
+		height: calc(100% - 2rem);
+		padding: 1.5rem;
+		position: absolute;
+		left: 1rem;
+		top: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $orange + d9;
+		font-size: 2rem;
+		font-weight: 400;
+		line-height: 3rem;
+		text-transform: uppercase;
+		transition: all .3s;
 	}
 }

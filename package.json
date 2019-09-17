@@ -2,7 +2,7 @@
   "name": "anril",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "command.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,16 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/Oleshka24/Anril.git"
   },
-  "author": "Oleshka_24",
+  "author": "Oleshka24",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Oleshka24/Anril/issues"
   },
-  "homepage": "https://github.com/Oleshka24/Anril#readme",
+  "homepage": "https://github.com/Oleshka24/Anril",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
