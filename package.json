@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Oleshka24/Anril/issues"
   },
-  "homepage": "https://github.com/Oleshka24/Anril",
+  "homepage": "https://github.com/Oleshka24/Anril#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
