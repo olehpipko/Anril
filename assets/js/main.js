@@ -2,8 +2,6 @@ let navItems = document.querySelectorAll('.header__nav-item'),
 	servicesBtns = document.querySelectorAll('.services__nav-item'),
 	servicesItems = document.querySelectorAll('.services__item');
 
-
-
 for (let i = servicesBtns.length - 1; i >= 0; i--) {
 	servicesBtns[i].onclick = function () {
 
