@@ -147,7 +147,9 @@
 				</div>
 			</div>
 			<div class="header__bg">
-				<video autoplay loop preload class="header__video" src="assets/vid/banner-bg.mp4"></video>
+				<video autoplay="autoplay" loop preload class="header__video">
+					<source src="assets/vid/banner-bg.mp4" type='video/mp4'>
+				</video>
 			</div>
 		</section>
 	</header>
@@ -160,7 +162,7 @@
 		</section>
 		<section class="services">
 			<div class="services__row">
-				<a href="#" class="services__left">
+				<a href="#" class="services__left" title="Наши услуги">
 					<div class="services__icon">
 						<img src="assets/img/icons/services-icon.svg" alt="Services">
 					</div>
@@ -171,37 +173,38 @@
 						<ul class="services__nav">
 							<li class="services__nav-item services__nav-item--current">
 								<button class="services__nav-btn">
-									<img src="assets/img/icons/creating-sites-icon.svg" alt="Создание сайта" class="services__nav-btn-icon">
+									<object data="assets/img/icons/creating-sites-icon.svg" type="image/svg+xml" alt="Создание сайта" class="services__nav-btn-icon"></object>
 									Создание сайта
 								</button>
 							</li>
 							<li class="services__nav-item">
 								<button class="services__nav-btn">
-									<img src="assets/img/icons/seo-icon.svg" alt="Продвижение и оптимизация SEO" class="services__nav-btn-icon">
+									<object type="image/svg+xml" data="assets/img/icons/seo-icon.svg" alt="Продвижение и оптимизация SEO" class="services__nav-btn-icon"></object>
 									Продвижение и оптимизация SEO
 								</button>
 							</li>
 							<li class="services__nav-item">
 								<button class="services__nav-btn">
-									<img src="assets/img/icons/smm-icon.svg" alt="SMM продвижение" class="services__nav-btn-icon">
+									<object type="image/svg+xml" data="assets/img/icons/smm-icon.svg" alt="SMM продвижение" class="services__nav-btn-icon"></object>
 									SMM продвижение
 								</button>
 							</li>
 							<li class="services__nav-item">
 								<button class="services__nav-btn">
-									<img src="assets/img/icons/testimonals-icon.svg" alt="Отзывы" class="services__nav-btn-icon">
+									<object type="image/svg+xml" data="assets/img/icons/testimonals-icon.svg" alt="Отзывы" class="services__nav-btn-icon"></object>
 									Отзывы
 								</button>
 							</li>
 							<li class="services__nav-item">
 								<button class="services__nav-btn">
-									<img src="assets/img/icons/ppc-icon.svg" alt="PPC - контекстная реклама" class="services__nav-btn-icon">PPC — контекстная реклама
+									<object type="image/svg+xml" data="assets/img/icons/ppc-icon.svg" alt="PPC - контекстная реклама" class="services__nav-btn-icon"></object>
+									PPC — контекстная реклама
 								</button>
 							</li>
 						</ul>
 					</nav>
 					<ul class="services__list">
-						<li class="services__item">
+						<li class="services__item services__item--current">
 							<h3 class="services__subheading">Создание сайта</h3>
 							<p>Веб студия Анрил занимается разработкой сайтов и предлагает полный комплекс услуг для создания веб-ресурса. </p>
 							<p>В компании работают специалисты, которые знают о создании сайта все. Опыт работы и профессионализм позволяют реализовывать проекты любой сложности.</p>
@@ -248,43 +251,51 @@
 			<div class="conditions__row">
 				<ul class="conditions__list">
 					<li class="conditions__item">
-						<div class="conditions__item--front">
-							<img src="assets/img/icons/design-icon.svg" alt="Дизайн сайта" class="conditions__icon">
-							<h3 class="conditions__heading">Дизайн сайта</h3>
-						</div>
-						<div class="conditions__item--back">
-							<h3 class="conditions__heading">Дизайн сайта</h3>
-							<p>Мы работаем как с бесплатными так и платными шаблонами.</p>
-						</div>
-					</li>
-					<li class="conditions__item">
-						<div class="conditions__item--front">
-							<img src="assets/img/icons/logic-icon.svg" alt="Логика" class="conditions__icon">
-							<h3 class="conditions__heading">Логика</h3>
-						</div>
-						<div class="conditions__item--back">
-							<h3 class="conditions__heading">Структура сайта</h3>
-							<p>Правильная проработка СЕО сайта.</p>
+						<div class="conditions__item-body">
+							<div class="conditions__item--front">
+								<img src="assets/img/icons/design-icon.svg" alt="Дизайн сайта" class="conditions__icon">
+								<h3 class="conditions__heading">Дизайн сайта</h3>
+							</div>
+							<div class="conditions__item--back">
+								<h3 class="conditions__heading">Дизайн сайта</h3>
+								<p>Мы работаем как с бесплатными так и платными шаблонами.</p>
+							</div>
 						</div>
 					</li>
 					<li class="conditions__item">
-						<div class="conditions__item--front">
-							<img src="assets/img/icons/price-icon.svg" alt="От 191$" class="conditions__icon">
-							<h3 class="conditions__heading">От 191$</h3>
-						</div>
-						<div class="conditions__item--back">
-							<h3 class="conditions__heading">Сайт под ключ за 191$</h3>
-							<p>Заказать сайт у нас, вы получите правильный фундамент для роста!</p>
+						<div class="conditions__item-body">
+							<div class="conditions__item--front">
+								<img src="assets/img/icons/logic-icon.svg" alt="Логика" class="conditions__icon">
+								<h3 class="conditions__heading">Логика</h3>
+							</div>
+							<div class="conditions__item--back">
+								<h3 class="conditions__heading">Структура сайта</h3>
+								<p>Правильная проработка СЕО сайта.</p>
+							</div>
 						</div>
 					</li>
 					<li class="conditions__item">
-						<div class="conditions__item--front">
-							<img src="assets/img/icons/target-icon.svg" alt="Цель" class="conditions__icon">
-							<h3 class="conditions__heading">Цель</h3>
+						<div class="conditions__item-body">
+							<div class="conditions__item--front">
+								<img src="assets/img/icons/price-icon.svg" alt="От 191$" class="conditions__icon">
+								<h3 class="conditions__heading">От 191$</h3>
+							</div>
+							<div class="conditions__item--back">
+								<h3 class="conditions__heading">Сайт под ключ за 191$</h3>
+								<p>Заказать сайт у нас, вы получите правильный фундамент для роста!</p>
+							</div>
 						</div>
-						<div class="conditions__item--back">
-							<h3 class="conditions__heading">Работаем с конкретикой</h3>
-							<p>При создании сайта, продвижении сайта или оптимизации, всегда работают только специалисты</p>
+					</li>
+					<li class="conditions__item">
+						<div class="conditions__item-body">
+							<div class="conditions__item--front">
+								<img src="assets/img/icons/target-icon.svg" alt="Цель" class="conditions__icon">
+								<h3 class="conditions__heading">Цель</h3>
+							</div>
+							<div class="conditions__item--back">
+								<h3 class="conditions__heading">Работаем с конкретикой</h3>
+								<p>При создании сайта, продвижении сайта или оптимизации, всегда работают только специалисты</p>
+							</div>
 						</div>
 					</li>
 				</ul>
@@ -348,7 +359,7 @@
 	</main>
 	<footer class="footer">
 		<div class="footer__row">
-			<a href="#" class="footer__btn"><span></span></a>
+			<a href="#" class="footer__btn"><span>Вверх</span></a>
 			<p class="footer__copyrigh">© 2019  All Rights Reserved. © Анрил Веб студия. </p>
 			<nav>
 				<ul class="footer__nav">
@@ -374,5 +385,6 @@
 			</nav>
 		</div>
 	</footer>
+	<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

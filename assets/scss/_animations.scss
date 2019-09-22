@@ -1,0 +1,19 @@
+@keyframes services {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes servicesBtn {
+	0% {
+		transform: translateY(4rem);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}

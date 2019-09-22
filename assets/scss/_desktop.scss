@@ -81,7 +81,8 @@ a {
 			color: $violet;
 			transition: all .1s;
 
-			&:hover {
+			&:hover,
+			&:focus {
 				color: $white;
 
 				&.icon {
@@ -141,7 +142,8 @@ a {
 			font-size: 1.4rem;
 			transition: all .1s;
 
-			&:hover {
+			&:hover,
+			&:focus {
 				color: $violet;
 			}
 
@@ -229,7 +231,8 @@ a {
 			font-weight: 700;
 			transition: all .1s;
 			
-			&:hover {
+			&:hover,
+			&:focus {
 				color: $violet;
 			}
 		}
@@ -244,7 +247,8 @@ a {
 		margin-left: 3rem;
 		transition: all .1s;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: $violet;
 		}
 	}
@@ -303,6 +307,7 @@ a {
 		min-height: 4.5rem;
 		width: max-content;
 		padding: 0 4rem;
+		border-width: 0;
 		margin-top: 1.5rem;
 		margin-left: auto;
 		border-radius: .3rem;
@@ -315,6 +320,7 @@ a {
 		background-color: $violet;
 		transition: all .1s;
 		color: $white;
+		cursor: pointer;
 
 		&:hover {
 			background-color: $orange;
@@ -394,14 +400,24 @@ a {
 		align-items: center;
 		justify-content: center;
 		background-color: $violet;
+
+		&:hover {
+			background-color: $orange;
+			transition: all .3s;
+		}
+	}
+
+	&__left:hover &__icon {
+		transform: rotate(45deg);
 	}
 
 	&__icon {
 		width: 14rem;
 		height: 14rem;
 		margin-bottom: 5rem;
+		transition: all .3s;
 
-		img {
+		> * {
 			width: 100%;
 			height: 100%;
 		}
@@ -421,28 +437,62 @@ a {
 
 	&__nav {
 		width: 80%;
+		min-height: 5.5rem;
 		padding: 0;
 		margin: 4rem auto 0;
 		list-style: none;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+
+		&-item {
+			min-width: 5rem;
+			display: flex;
+			justify-content: center;
+		}
 
 		&-btn {
+			padding: 0;
+			border-width: 0;
 			display: flex;
 			flex-direction: column;
 			font-size: .1rem;
 			background-color: transparent;
-			color: $white;
-			border-width: 0;
+			color: $light;
 			cursor: pointer;
+
+			&:focus &-icon {
+				filter: invert(38%) 
+						sepia(71%) saturate(648%) 
+						hue-rotate(220deg) 
+						brightness(95%) 
+						contrast(95%);
+			}
+
+			&:hover &-icon {
+				filter: invert(64%) 
+						sepia(97%) 
+						saturate(400%) 
+						hue-rotate(334deg) 
+						brightness(101%) 
+						contrast(97%);
+			}
 
 			&-icon {
 				height: 3rem;
+				pointer-events: none;
+				fill: $dark;
+				transition: all .1s;
 			}
 		}
 
 		&-item--current &-btn-icon {
 			height: 5rem;
+			filter: invert(38%) 
+					sepia(71%) saturate(648%) 
+					hue-rotate(220deg) 
+					brightness(95%) 
+					contrast(95%);
 		}
 	}
 
@@ -460,9 +510,11 @@ a {
 		color: $dark;
 		font-size: 1.7rem;
 		line-height: 2rem;
+		display: none;
+		animation: services .8s;
 
-		&:not(:first-child) {
-			display: none;
+		&--current {
+			display: block;
 		}
 	}
 
@@ -477,6 +529,7 @@ a {
 	&__btn {
 		@extend .header__btn;
 		margin-top: 3rem;
+		animation: servicesBtn .8s;
 	}
 
 	p {
@@ -540,14 +593,20 @@ a {
 	}
 
 	&__item {
-		height: 30rem;
 		width: calc(25% - 1.5rem);
-		position: relative;
-		background-color: $light;
-		overflow: hidden;
+		perspective: 100rem;
 
-		&:hover &--back {
-			top: 0;
+		&:hover &-body {
+			transform: rotateY(180deg);
+		}
+
+		&-body {
+			width: 100%;
+			height: 30rem;
+			position: relative;
+			overflow: hidden;
+			transition: all .3s;
+			transform-style: preserve-3d;
 		}
 
 		&--front,
@@ -561,19 +620,23 @@ a {
 
 		&--front {
 			position: relative;
+			z-index: 6;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			background-color: $light;
 		}
 
 		&--back {
 			position: absolute;
 			left: 0;
-			top: 100%;
+			top: 0;
+			z-index: 3;
 			background-color: $violet + db;
 			color: $white;
-			transition: all .3s;
+			transition: all .5s;
+			transform: rotateY(180deg);
 		}
 	}
 
@@ -652,5 +715,114 @@ a {
 		line-height: 3rem;
 		text-transform: uppercase;
 		transition: all .3s;
+	}
+
+	&__btn {
+		@extend .header__btn;
+		margin-top: 4rem;
+		background-color: #a179f6;
+	}
+}
+
+.banner {
+	min-height: 80vh;
+	padding: 10rem 1.5rem;
+	background-image:url('../img/bg.jpg');
+	background-size: cover;
+	background-position: left;
+	color: $white;
+	font-size: 1.7rem;
+	line-height: 2.2rem;
+
+	&__row {
+		@extend .about__row;
+		padding-right: 35vw;
+	}
+
+	&__heading {
+		margin-top: 0;
+		font-size: 3.5rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		line-height: 5.5rem;
+	}
+
+	&__btn {
+		@extend .header__btn;
+	}
+
+	&__form {
+		display: none;
+	}
+}
+
+.footer {
+	padding: 6rem 1.5rem;
+	font-size: 1.7rem;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: $orange;
+	color: $white;
+
+	&__row {
+		@extend .about__row;
+	}
+
+	&__btn {
+		width: 3.6rem;
+		height: 3rem;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		font-size: .1rem;
+
+		&:hover span {
+			transform: translateY(0);
+		}
+
+		span {
+			display: flex;
+			transform: translateY(.5rem);
+			color: $orange;
+			transition: all .1s;
+
+			&::before,
+			&::after {
+				content: "";
+				width: 2.5rem;
+				height: .5rem;
+				display: inline-block;
+				background-color: $white;
+			}
+
+			&::before {
+				transform: rotateZ(-45deg) translateX(1rem);
+			}
+
+			&::after {
+				transform: rotateZ(45deg) translateX(-1rem);
+			}
+		}
+	}
+
+	&__nav {
+		width: 75%;
+		padding: 0;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		list-style-type: none;
+		font-family: Spectral;
+		color: $violet;
+	}
+
+	&__link {
+		padding: .5rem 1rem;
+		border: .2rem solid $orange;
+		transition: all .2s;
+
+		&:hover {
+			border-color: $violet;
+		}
 	}
 }
