@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Веб студия Анрил Днепр Создание, продвижение, оптимизация.</title>
 
 	<link rel="stylesheet" href="libs/fontello/css/fontello.css">
@@ -60,7 +61,7 @@
 						<li class="header__nav-item header__nav-item--have-megamenu">
 							<a href="#" class="header__nav-link">Сайт</a>
 							<ul class="header__megamenu">
-								<li>
+								<li class="header__subnav-cont">
 									<h3 class="header__subnav-heading"><a href="#">Создание</a></h3>
 									<ul class="header__subnav">
 										<li class="header__subnav-item">
@@ -86,7 +87,7 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li class="header__subnav-cont">
 									<h3 class="header__subnav-heading"><a href="#">Продвижение</a></h3>
 									<ul class="header__subnav">
 										<li class="header__subnav-item">
@@ -103,7 +104,7 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li class="header__subnav-cont">
 									<h3 class="header__subnav-heading"><a href="#">Оптимизация</a></h3>
 									<ul class="header__subnav">
 										<li class="header__subnav-item">
@@ -344,10 +345,12 @@
 		</section>
 		<section class="banner">
 			<div class="banner__row">
-				<h2 class="banner__heading">Продвижение сайта - бесплатный СЕО анализ</h2>
-				<p>Ваш сайт будет проверен постранично, включая под домены. Так же социальные взаимодействия, технические ошибки и другие факторы SEO. Не только это, но и анализ конкуренции. и много чего еще. Наша веб студия Анрил, даст оценку вашему сайту, охватывающую более 200 основных аспектов.</p>
-				<button class="banner__btn">Запросить аудит</button>
-				<form class="banner__form">
+				<div class="banner__content banner__content--current">
+					<h2 class="banner__heading">Продвижение сайта - бесплатный СЕО анализ</h2>
+					<p>Ваш сайт будет проверен постранично, включая под домены. Так же социальные взаимодействия, технические ошибки и другие факторы SEO. Не только это, но и анализ конкуренции. и много чего еще. Наша веб студия Анрил, даст оценку вашему сайту, охватывающую более 200 основных аспектов.</p>
+					<button class="banner__btn">Запросить аудит</button>
+				</div>
+				<form class="banner__form banner__form--hide">
 					<input name="fullname" type="text" class="banner__input" placeholder="Имя">
 					<input name="website" type="text" class="banner__input" placeholder="Адрес Сайта">
 					<input required name="e-mail" type="text" class="banner__input" placeholder="E-mail">
