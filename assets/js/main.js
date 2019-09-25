@@ -7,7 +7,9 @@ let navItems = document.querySelectorAll('.header__nav-item'),
 
 	bannerBtn = document.querySelector('.banner__btn'),
 	bannerForm = document.querySelector('.banner__form'),
-	bannerContent = document.querySelector('.banner__content');
+	bannerContent = document.querySelector('.banner__content'),
+
+	conditionsItem = document.querySelectorAll('.conditions__item');
 
 for (let i = servicesBtns.length - 1; i >= 0; i--) {
 	servicesBtns[i].onclick = function () {
@@ -29,9 +31,25 @@ bannerBtn.onclick = function() {
 }
 
 window.addEventListener('scroll', function() {
-	if( pageYOffset >= 66) {
-		headerBar.classList.add('header__bar--fixed');
+	if ( document.documentElement.cientWidth > 1140 ) {
+		if( pageYOffset >= 66) {
+			headerBar.classList.add('header__bar--fixed');
+		} else {
+			headerBar.classList.remove('header__bar--fixed');
+		}
 	} else {
-		headerBar.classList.remove('header__bar--fixed');
+		if( pageYOffset >= 180) {
+			headerBar.classList.add('header__bar--fixed');
+		} else {
+			headerBar.classList.remove('header__bar--fixed');
+		}
 	}
 });
+
+if ( document.documentElement.clientWidth < 992 ) {
+	for(let i = 0; i < conditionsItem.length; i++) {
+		conditionsItem[i].onclick = function () {
+			this.classList.add('conditions__item--current');
+		}
+	}
+}
