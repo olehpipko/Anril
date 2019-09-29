@@ -326,6 +326,10 @@ img {
 				color: $orange;
 			}
 		}
+
+		&-open {
+			display: none;
+		}
 	}
 
 	&__login {
